@@ -3,6 +3,7 @@
   "name": "sanity-translation-examples",
   "version": "1.0.0",
   "scripts": {
+    "build-all": "npm run build && npm run build-studio",
     "build": "lerna run build --parallel",
     "build-studio": "(cd studio && npm run build)",
     "dev": "lerna run dev --parallel",

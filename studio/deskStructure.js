@@ -30,9 +30,13 @@ export default () =>
             .title('Field level translations')
             .items(
               [
-                S.documentTypeListItem('article')
+                S.documentTypeListItem('tag')
                   .icon(ArticleIcon),
-                S.documentTypeListItem('author')
+                S.documentTypeListItem('player')
+                  .icon(AuthorIcon),
+                S.documentTypeListItem('admin')
+                  .icon(AuthorIcon),
+                S.documentTypeListItem('game')
                   .icon(AuthorIcon),
               ]
             )
@@ -46,20 +50,20 @@ export default () =>
             .title('Document level translations')
             .items([
               S.listItem()
-                .title('Post')
-                .id('post-docs')
+                .title('Tags')
+                .id('tag-docs')
                 .icon(PostIcon)
-                .schemaType('post')
+                .schemaType('tag')
                 .child(
                   S.documentList()
-                    .id('post')
-                    .title('Posts')
+                    .id('tag')
+                    .title('Tags')
                     // Use a GROQ filter to get documents.
-                    .filter('_type == "post" && (!defined(_lang) || _lang == $baseLang)')
+                    .filter('_type == "tag" && (!defined(_lang) || _lang == $baseLang)')
                     .params({ baseLang: i18n.base })
                     .canHandleIntent((_name, params, _context) => {
                       // Assume we can handle all intents (actions) regarding post documents
-                      return params.type === 'post'
+                      return params.type === 'tag'
                     })
                 )
             ]
