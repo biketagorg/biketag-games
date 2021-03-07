@@ -6,8 +6,6 @@ import {
   GrDocumentText as FieldIcon,
   GrMultiple as DocumentIcon,
   GrTextAlignLeft as PostIcon,
-  GrUser as AuthorIcon,
-  GrArticle as ArticleIcon
 } from 'react-icons/gr'
 
 export const getDefaultDocumentNode = (props) => {
@@ -28,18 +26,6 @@ export default () =>
           S.list()
             .id('field-level')
             .title('Field level translations')
-            .items(
-              [
-                S.documentTypeListItem('tag')
-                  .icon(ArticleIcon),
-                S.documentTypeListItem('player')
-                  .icon(AuthorIcon),
-                S.documentTypeListItem('admin')
-                  .icon(AuthorIcon),
-                S.documentTypeListItem('game')
-                  .icon(AuthorIcon),
-              ]
-            )
         ),
       S.listItem()
         .title('Document level')

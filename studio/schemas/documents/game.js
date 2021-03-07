@@ -10,6 +10,11 @@ export default {
   i18n,
   fields: [
     {
+      title: "Game Name",
+      name: "name",
+      type: "string",
+    },
+    {
       title: "Game",
       name: "game",
       type: "slug",
@@ -17,11 +22,6 @@ export default {
       options: {
         source: "name",
       },
-    },
-    {
-      title: "Game Name",
-      name: "name",
-      type: "string",
     },
     {
       title: "Region",
@@ -72,10 +72,10 @@ export default {
       },
     },
   ],
-  preview: {
-    select: {
-      title: "name",
-      media: "logo",
-    },
-  },
+  // preview: {
+  //   select: {
+  //     title: "name",
+  //     media: "logo",
+  //   },
+  // },
 };

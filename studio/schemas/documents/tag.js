@@ -13,10 +13,9 @@ export default {
       title: 'Tag',
       name: 'tag',
       type: 'slug',
-      // readOnly: true,
+      readOnly: true,
       options: {
-        source: (doc, {parent}) => `${parent.game}-${parent.tagnumber}`,
-        slugify: input => { console.log({input}) ; return `tag-${input}` }
+        isUnique: true,
       },
     },
     {
@@ -30,6 +29,7 @@ export default {
       title: 'TagNumber',
       name: 'tagnumber',
       type: 'number',
+      required: true,
     },
     {
       title: 'Player',
@@ -65,10 +65,4 @@ export default {
       },
     }
   ],
-  preview: {
-    select: {
-      title: 'slug',
-      media: 'mysteryImage'
-    }
-  }
 }

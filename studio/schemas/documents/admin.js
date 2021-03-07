@@ -10,6 +10,7 @@ export default {
       hidden: true,
       options: {
         source: 'username',
+        slugify: input => input.toLocaleLowerCase()
       },
     },
     {
