@@ -5,7 +5,7 @@ export default {
   fields: [
     {
       title: "Region",
-      name: "region",
+      name: "slug",
       type: "slug",
       hidden: true,
       options: {

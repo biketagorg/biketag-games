@@ -22,20 +22,20 @@ export default function SetSlugAndPublishAction(props) {
       // This will update the button text 
       setIsPublishing(true)
 
-      let slug = ''
+      let slug = '', name = props.draft.name
       console.log({props})
       
       /// TODO: load a slugify function from the document for this task
       switch (props.type) {
         case 'tag':
-          slug = `${props.draft.game._ref}-tag-${props.draft.tagnumber}`
+          name = slug = `${props.draft.game._ref}-tag-${props.draft.tagnumber}`
           break;
         default:
           break;
       }
 
       // Set the slug
-      patch.execute([{set: {slug}}])
+      patch.execute([{set: { slug: { _type: 'slug', current: slug }, name }}])
       
       // Perform the publish
       publish.execute()

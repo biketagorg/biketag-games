@@ -7,7 +7,7 @@ import { SetSlugAndPublishAction } from "./actions/setSlugAndPublishAction.js"
 
 export default function resolveDocumentActions(props) {
   if (["tag"].indexOf(props.type) === -1) {
-    return [...defaultResolve(props)]
+    return defaultResolve(props)
   }
 
   return [...defaultResolve(props), SetSlugAndPublishAction]

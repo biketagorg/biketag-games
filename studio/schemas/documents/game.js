@@ -16,7 +16,7 @@ export default {
     },
     {
       title: "Game",
-      name: "game",
+      name: "slug",
       type: "slug",
       hidden: true,
       options: {
@@ -33,21 +33,7 @@ export default {
     {
       title: "Boundary",
       name: "boundary",
-      type: "string",
-    },
-    {
-      type: "array",
-      name: "admins",
-      // We probably don't want localized versions of this reference array, so
-      // we opt out of localizing this specific field
-      localize: false,
-      weak: true,
-      of: [
-        {
-          type: "reference",
-          to: [{ type: "admin" }],
-        },
-      ],
+      type: "geopoint",
     },
     {
       type: "array",

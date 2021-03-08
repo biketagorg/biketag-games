@@ -8,7 +8,6 @@ import captionImage from './objects/captionImage'
 import player from './documents/player'
 import tag from './documents/tag'
 import game from './documents/game'
-import admin from './documents/admin'
 import region from './documents/region'
 
 import { translateFields } from './fieldTranslation'
@@ -38,7 +37,6 @@ export default createSchema({
       tag,
       player,
       game,
-      admin,
       region,
     ]))
 })

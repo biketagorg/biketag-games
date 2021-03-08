@@ -10,13 +10,41 @@ export default {
   i18n,
   fields: [
     {
-      title: 'Tag',
-      name: 'tag',
+      title: 'Slug',
+      name: 'slug',
       type: 'slug',
       readOnly: true,
+      hidden: true,
       options: {
-        isUnique: true,
+        source: 'tagnumber',
+        isUnique: input => true,
+        slugify: input => input.toString().toLowerCase()
       },
+    },
+    {
+      title: 'Tag',
+      name: 'name',
+      type: 'string',
+      readOnly: true,
+      options: {
+        source: 'slug',
+      },
+    },
+    {
+      title: 'TagNumber',
+      name: 'tagnumber',
+      type: 'number',
+      validation: Rule => Rule.required()
+    },
+    {
+      title: 'Mystery Image',
+      name: 'mysteryImage',
+      type: 'image',
+    },
+    {
+      title: 'Mystery Image URL',
+      name: 'mysteryImageUrl',
+      type: 'string',
     },
     {
       title: 'Game',
@@ -24,12 +52,7 @@ export default {
       type: 'reference',
       weak: true,
       to: [{type: 'game'}],
-    },
-    {
-      title: 'TagNumber',
-      name: 'tagnumber',
-      type: 'number',
-      required: true,
+      validation: Rule => Rule.required()
     },
     {
       title: 'Player',
@@ -39,30 +62,34 @@ export default {
       to: [{type: 'player'}],
     },
     {
-      title: 'Found Location',
-      name: 'foundLocation',
-      type: 'string',
-    },
-    {
       title: 'Hint',
       name: 'hint',
       type: 'string',
     },
     {
-      title: 'FoundImage',
-      name: 'foundImage',
-      type: 'captionImage',
-      options: {
-        hotspot: true
-      },
+      title: 'Discussion URL',
+      name: 'discussionUrl',
+      type: 'string',
     },
     {
-      title: 'MysteryImage',
-      name: 'mysteryImage',
-      type: 'captionImage',
-      options: {
-        hotspot: true
-      },
-    }
+      title: 'Found Location',
+      name: 'foundLocation',
+      type: 'string',
+    },
+    {
+      title: 'GPS',
+      name: 'gps',
+      type: 'geopoint',
+    },
+    {
+      title: 'Found Image',
+      name: 'foundImage',
+      type: 'image',
+    },
+    {
+      title: 'Found Image URL',
+      name: 'foundImageUrl',
+      type: 'string',
+    },
   ],
 }
