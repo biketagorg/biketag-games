@@ -21,6 +21,14 @@ export default {
       type: "string",
     },
     {
+      title: "Bicon",
+      name: "avatar",
+      type: "captionImage",
+      options: {
+        hotspot: true,
+      },
+    },
+    {
       type: "array",
       name: "tags",
       weak: true,
@@ -37,10 +45,6 @@ export default {
     {
       type: "array",
       name: "altNames",
-      weak: true,
-      // We probably don't want localized versions of this reference array, so
-      // we opt out of localizing this specific field
-      localize: false,
       of: [
         {
           type: "string",

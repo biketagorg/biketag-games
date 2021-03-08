@@ -50,7 +50,6 @@ export default {
       title: 'Game',
       name: 'game',
       type: 'reference',
-      weak: true,
       to: [{type: 'game'}],
       validation: Rule => Rule.required()
     },
@@ -58,7 +57,6 @@ export default {
       title: 'Player',
       name: 'player',
       type: 'reference',
-      weak: true,
       to: [{type: 'player'}],
     },
     {
