@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "sanity-translation-examples",
+  "name": "biketag",
   "version": "1.0.0",
   "scripts": {
     "build-all": "npm run build && npm run build-studio",

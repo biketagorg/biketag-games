@@ -2,6 +2,14 @@
 
 import {useState, useEffect} from 'react'
 import {useDocumentOperation} from '@sanity/react-hooks'
+import sanityClient from '@sanity/client'
+
+const sanityClientConfig = {
+  projectId: process.env.SANITY_STUDIO_API_PROJECT_ID,
+  dataset: process.env.SANITY_STUDIO_API_DATASET,
+  token: process.env.SANITY_STUDIO_API_TOKEN,
+  useCdn: true,
+}
 
 export default function SetSlugAndPublishAction(props) {
   const {patch, publish} = useDocumentOperation(props.id, props.type)
@@ -18,24 +26,33 @@ export default function SetSlugAndPublishAction(props) {
   return {
     disabled: publish.disabled,
     label: isPublishing ? 'Publishing…' : 'Publish',
-    onHandle: () => {
+    onHandle: async () => {
       // This will update the button text 
       setIsPublishing(true)
 
+      console.log({sanityClientConfig})
+      const client = sanityClient(sanityClientConfig)
       let slug = '', name = props.draft.name
-      console.log({props})
       
       /// TODO: load a slugify function from the document for this task
       switch (props.type) {
         case 'tag':
-          name = slug = `${props.draft.game._ref}-tag-${props.draft.tagnumber}`
+          let gameName = props.draft.game._ref
+          const query = '*[_type == "game" && _id == $gameID][0] {name}'
+          const params = {gameID: gameName}
+
+          await client.fetch(query, params).then(game => {
+            gameName = !!game ? game.name : gameName
+          })
+
+          name = slug = `${gameName}-tag-${props.draft.tagnumber}`
           break;
         default:
           break;
       }
 
       // Set the slug
-      patch.execute([{set: { slug: { _type: 'slug', current: slug }, name }}])
+      patch.execute([{set: { slug: { _type: 'slug', current: slug.toLowerCase() }, name: name.toLowerCase() }}])
       
       // Perform the publish
       publish.execute()

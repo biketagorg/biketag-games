@@ -5,7 +5,8 @@
   },
   "api": {
     "projectId": "x37ikhvs",
-    "dataset": "production"
+    "dataset": "production",
+    "token": "skY0gJ7VDXft1Ilz3TQPdDWApYQMSvZRPztW0Le0X7i8f8L4cpalx7HkAV5hzyUw3PeDWIlu383Dm1IRB8DDm39wcjGg22h0lOOcTyGzqSKjevJpdmzujS1E9AmJYPsx7gU4lXFtiEpBB9rFWOneuseYN9wTG6w6ZODpKMidOWCulBBV0AJQ"
   },
   "plugins": [
     "@sanity/base",
@@ -29,7 +30,7 @@
     },
     {
       "implements": "part:@sanity/base/document-actions/resolver",
-      "path": "./lib/documentActions.js"
+      "path": "./schemas/documentActions.js"
     }
   ]
 }
