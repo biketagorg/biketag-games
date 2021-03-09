@@ -6,3 +6,5 @@ node_modules
 
 # lerna files
 /lerna-debug.log
+
+.env*
