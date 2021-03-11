@@ -30,7 +30,6 @@ export default function SetSlugAndPublishAction(props) {
       // This will update the button text 
       setIsPublishing(true)
 
-      console.log({sanityClientConfig})
       const client = sanityClient(sanityClientConfig)
       let slug = '', name = props.draft.name
       
