@@ -17,7 +17,6 @@ export default {
       hidden: true,
       options: {
         source: 'tagnumber',
-        isUnique: input => true,
         slugify: input => input.toString().toLowerCase()
       },
     },
@@ -34,7 +33,7 @@ export default {
       title: 'TagNumber',
       name: 'tagnumber',
       type: 'number',
-      validation: Rule => Rule.required()
+      validation: Rule => Rule.required().custom((field, context) => { console.log({s: context.document.slug.current, sl: context.document.slug.current.length, field, d: context.document}) ; return (field !== undefined && context.document.slug && context.document.slug.current.length && context.document.tagnumber !== field) ? "This field cannot be changed after it has been set the first time." : true }),
     },
     {
       title: 'Mystery Image',

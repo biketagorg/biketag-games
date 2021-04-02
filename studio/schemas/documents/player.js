@@ -10,14 +10,12 @@ export default {
       readOnly: true,
       hidden: true,
       options: {
-        source: "username",
-        isUnique: (input) => true,
-        slugify: (input) => input.toString().toLowerCase(),
+        source: "name",
       },
     },
     {
-      title: "Username",
-      name: "username",
+      title: "Name",
+      name: "name",
       type: "string",
     },
     {

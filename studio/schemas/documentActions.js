@@ -7,11 +7,13 @@ import defaultResolve, {
   
   /// Publish Actions
   export default function useDocumentActions(props) {
-    if (["tag"].indexOf(props.type) !== -1) {
+    /// Leave the code below commented out to run this action for all documents
+    /// Uncomment the code below to restrict this action to specific documents only
+    // if (["tag"].indexOf(props.type) !== -1) {
       return defaultResolve(props).map((Action) =>
         Action === PublishAction ? SetSlugAndPublishAction : Action
       );
-    }
+    // }
 
-    return defaultResolve(props)
+    // return defaultResolve(props)
   }
