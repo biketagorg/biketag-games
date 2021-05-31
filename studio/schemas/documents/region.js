@@ -22,5 +22,10 @@ export default {
       name: 'description',
       type: 'string',
     },
+    {
+      title: 'Region Zipcode',
+      name: 'zipcode',
+      type: 'string',
+    },
   ],
 }
