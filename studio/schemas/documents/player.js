@@ -49,5 +49,14 @@ export default {
         },
       ],
     },
+    {
+      type: "array",
+      name: "devices",
+      of: [
+        {
+          type: "string",
+        },
+      ],
+    },
   ],
 };
