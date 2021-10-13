@@ -10,7 +10,10 @@
     "format": "lerna run format",
     "lint": "lerna run lint",
     "postinstall": "lerna bootstrap",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "login": "cd studio && npm run login",
+    "deploy": "cd studio && npm run deploy",
+    "upgrade": "cd studio && npm run upgrade"
   },
   "devDependencies": {
     "@sanity/cli": "^0.144.0",
