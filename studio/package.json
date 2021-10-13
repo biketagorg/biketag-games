@@ -33,7 +33,8 @@
     "react": "^17.0.0",
     "react-dom": "^16.14.0",
     "react-icons": "^3.11.0",
-    "sanity-plugin-intl-input": "^5.0.0"
+    "sanity-plugin-intl-input": "^5.0.0",
+    "styled-components": "^5.3.1"
   },
   "devDependencies": {
     "@nodelib/fs.walk": "^1.2.6",
