@@ -30,6 +30,16 @@ export default {
             to: [{ type: "region" }],
         },
         {
+          title: "MainHash",
+          name: "mainhash",
+          type: "string",
+        },
+        {
+          title: "QueueHash",
+          name: "queuehash",
+          type: "string",
+        },
+        {
             title: "Boundary",
             name: "boundary",
             type: "geopoint",
