@@ -40,6 +40,11 @@ export default {
           type: "string",
         },
         {
+          title: "SubReddit",
+          name: "subreddit",
+          type: "string",
+        },
+        {
             title: "Boundary",
             name: "boundary",
             type: "geopoint",
