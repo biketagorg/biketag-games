@@ -42,6 +42,17 @@ export default {
     },
     {
       type: "array",
+      name: "games",
+      weak: true,
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "game" }],
+        },
+      ],
+    },
+    {
+      type: "array",
       name: "altNames",
       of: [
         {
