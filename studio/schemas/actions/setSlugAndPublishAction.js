@@ -65,7 +65,7 @@ export default function SetSlugAndPublishAction(props) {
             break;
 
           default:
-            slug = slug.toLowerCase();
+            slug = slug.toLowerCase().replace(/\s/gi,'');
             break;
         }
 

@@ -76,10 +76,7 @@ export default {
         {
             title: "Logo",
             name: "logo",
-            type: "captionImage",
-            options: {
-                hotspot: true,
-            },
+            type: "image",
         },
     ],
     // preview: {
