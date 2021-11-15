@@ -10,6 +10,7 @@ import tag from './documents/tag'
 import game from './documents/game'
 import region from './documents/region'
 import ambassador from './documents/ambassador'
+import setting from './documents/setting'
 
 import { translateFields } from './fieldTranslation'
 
@@ -40,5 +41,6 @@ export default createSchema({
             game,
             region,
             ambassador,
+            setting,
         ]))
 })

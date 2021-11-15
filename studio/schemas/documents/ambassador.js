@@ -25,6 +25,11 @@ export default {
             to: [{ type: "player" }],
         },
         {
+            title: "Email Address",
+            name: "email",
+            type: "string",
+        },
+        {
             title: "Address Line 1",
             name: "address1",
             type: "string",
@@ -47,11 +52,6 @@ export default {
         {
             title: "Zipcode",
             name: "zipcode",
-            type: "string",
-        },
-        {
-            title: "Email Address",
-            name: "email",
             type: "string",
         },
         {
