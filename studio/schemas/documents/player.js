@@ -20,7 +20,7 @@ export default {
     },
     {
       title: "Bicon",
-      name: "avatar",
+      name: "bicon",
       type: "image",
       options: {
         hotspot: true,
