@@ -53,8 +53,14 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      title: 'Player',
-      name: 'player',
+      title: 'Mystery Player',
+      name: 'mysteryPlayer',
+      type: 'reference',
+      to: [{type: 'player'}],
+    },
+    {
+      title: 'Found Player',
+      name: 'foundPlayer',
       type: 'reference',
       to: [{type: 'player'}],
     },
