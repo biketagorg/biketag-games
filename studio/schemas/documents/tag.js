@@ -75,14 +75,19 @@ export default {
       type: 'string',
     },
     {
-      title: 'Found Location',
-      name: 'foundLocation',
+      title: 'Mention URL',
+      name: 'mentionUrl',
       type: 'string',
     },
     {
-      title: 'GPS',
-      name: 'gps',
-      type: 'geopoint',
+      title: 'Mystery Time',
+      name: 'mysteryTime',
+      type: 'datetime',
+    },
+    {
+      title: 'Found Time',
+      name: 'foundTime',
+      type: 'datetime',
     },
     {
       title: 'Found Image',
@@ -93,6 +98,16 @@ export default {
       title: 'Found Image URL',
       name: 'foundImageUrl',
       type: 'string',
+    },
+    {
+      title: 'Found Location',
+      name: 'foundLocation',
+      type: 'string',
+    },
+    {
+      title: 'GPS',
+      name: 'gps',
+      type: 'geopoint',
     },
   ],
 }

@@ -30,6 +30,11 @@ export default {
             type: "string",
         },
         {
+            title: "Privacy",
+            name: "privacy",
+            type: "boolean",
+        },
+        {
             title: "Address Line 1",
             name: "address1",
             type: "string",

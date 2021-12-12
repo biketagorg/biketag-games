@@ -3,6 +3,7 @@
   "name": "biketag",
   "version": "1.0.0",
   "scripts": {
+    "codegen": "cd studio && npm run generate",
     "build-all": "npm run build && npm run build-studio",
     "build": "lerna run build --parallel",
     "build-studio": "(cd studio && npm run build)",
@@ -17,7 +18,9 @@
   },
   "devDependencies": {
     "@sanity/cli": "^0.144.0",
-    "lerna": "^3.14.0"
+    "lerna": "^3.14.0",
+    "prettier": "^2.5.0",
+    "sanity-codegen": "^0.9.8"
   },
   "dependencies": {
     "@sanity/server": "^2.6.1"
