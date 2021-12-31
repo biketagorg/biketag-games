@@ -74,6 +74,18 @@ export default {
             }, ],
         },
         {
+            type: "array",
+            name: "settings",
+            // We probably don't want localized versions of this reference array, so
+            // we opt out of localizing this specific field
+            localize: false,
+            weak: true,
+            of: [{
+                type: "reference",
+                to: [{ type: "setting" }],
+            }, ],
+        },
+        {
             title: "Logo",
             name: "logo",
             type: "image",
