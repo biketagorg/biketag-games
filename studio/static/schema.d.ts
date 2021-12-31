@@ -127,18 +127,18 @@ export interface Tag extends SanityDocument {
   mentionUrl?: string;
 
   /**
-   * Found Location — `string`
+   * Mystery Time — `datetime`
    *
    *
    */
-  foundLocation?: string;
+  mysteryTime?: string;
 
   /**
-   * GPS — `geopoint`
+   * Found Time — `datetime`
    *
    *
    */
-  gps?: SanityGeoPoint;
+  foundTime?: string;
 
   /**
    * Found Image — `image`
@@ -158,6 +158,20 @@ export interface Tag extends SanityDocument {
    *
    */
   foundImageUrl?: string;
+
+  /**
+   * Found Location — `string`
+   *
+   *
+   */
+  foundLocation?: string;
+
+  /**
+   * GPS — `geopoint`
+   *
+   *
+   */
+  gps?: SanityGeoPoint;
 }
 
 /**
@@ -293,6 +307,13 @@ export interface Game extends SanityDocument {
    *
    */
   ambassadors?: Array<SanityKeyedReference<Ambassador>>;
+
+  /**
+   * settings — `array`
+   *
+   *
+   */
+  settings?: Array<SanityKeyedReference<Setting>>;
 
   /**
    * Logo — `image`
